@@ -37,6 +37,9 @@ RUN apt-get update \
 
 COPY --from=builder2 /build/new-api /
 COPY LICENSE NOTICE THIRD-PARTY-LICENSES.md /licenses/
+COPY setup.sh /setup.sh
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /setup.sh /entrypoint.sh
 EXPOSE 3000
 WORKDIR /data
-ENTRYPOINT ["/new-api"]
+ENTRYPOINT ["/entrypoint.sh"]

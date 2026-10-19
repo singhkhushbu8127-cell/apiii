@@ -1,0 +1,16 @@
+# railway.toml — Railway deployment config for this new-api fork.
+#
+# Railway builds from the repo Dockerfile automatically. Volumes and most
+# environment variables are attached via the Railway dashboard (see
+# DEPLOY.md); this file pins the builder + healthcheck so deploys are
+# consistent.
+
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+healthcheckPath = "/api/status"
+healthcheckTimeout = 300
+restartPolicyType = "on-failure"
+restartPolicyMaxRetries = 10

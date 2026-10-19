@@ -1,0 +1,40 @@
+# render.yaml — Render Blueprint for this new-api fork.
+#
+# Deploy: Render dashboard → New → Blueprint → point at your GitHub fork.
+# Render reads this file and provisions the web service + persistent disk.
+#
+# `sync: false` env vars are prompted once at blueprint creation and then
+# stored by Render — they are never committed to the repo.
+
+services:
+  - type: web
+    name: new-api
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/status
+    autoDeploy: true
+    disk:
+      name: new-api-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      # Persistent auth secret. generateValue creates a random one at
+      # first deploy and keeps it stable across redeploys.
+      - key: SESSION_SECRET
+        generateValue: true
+      # Admin bootstrap — prompted at blueprint creation (see setup.sh).
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SETUP_MODE
+        value: self
+      # Production hardening — see DEPLOY.md before enabling.
+      - key: ENABLE_PPROF
+        value: "false"
+      - key: DEBUG
+        value: "false"
+      - key: GENERATE_DEFAULT_TOKEN
+        value: "true"
+      - key: TZ
+        value: Asia/Kolkata

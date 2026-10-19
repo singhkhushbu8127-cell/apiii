@@ -30,6 +30,14 @@ export const THEME_PRESETS = [
     swatches: ['oklch(0.72 0.18 250)', 'oklch(0.7 0.12 280)'],
   },
   {
+    // The :root tokens in theme.css are tuned to the agent-router palette, so
+    // this explicit preset is visually identical to Default but lets users
+    // opt into it by name (and survives any future tweaks to :root defaults).
+    value: 'agent-router',
+    name: 'Agent Router',
+    swatches: ['oklch(0.7 0.13 210)', 'oklch(0.65 0.22 350)'],
+  },
+  {
     // Inspired by Anthropic's official brand language: warm cream canvas
     // (#faf9f5) paired with clay/coral (#d97757) as the single accent.
     // Swatches preview the canvas → accent gradient that defines the system.

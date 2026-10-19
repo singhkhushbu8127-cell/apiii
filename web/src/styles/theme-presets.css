@@ -291,6 +291,125 @@ For commercial licensing, please contact support@quantumnous.com
   --sidebar-ring: oklch(0.6359 0.1699 307.95);
 }
 
+/* ── Agent Router ──────────────────────────────────────────────────────── */
+/*
+ * Clean, minimal light theme inspired by AgentRouter.org — white canvas,
+ * dark slate ink, single cyan accent, magenta for emphasis. Companion
+ * `.dark` variant provides a high-contrast neon-on-near-black mode for
+ * users who prefer dark.
+ *
+ * Intended as the default for forks built on this codebase. Switch via
+ *   <body data-theme-preset='agent-router' data-theme-radius='lg' />
+ */
+[data-theme-preset='agent-router'] {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.205 0.04 264);
+  --card: oklch(0.985 0.005 247);
+  --card-foreground: oklch(0.205 0.04 264);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.205 0.04 264);
+
+  /* Cyan primary — #00b8d4 family (OKLCH hue ~210) */
+  --primary: oklch(0.7 0.13 210);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.965 0.01 247);
+  --secondary-foreground: oklch(0.205 0.04 264);
+  --muted: oklch(0.965 0.01 247);
+  --muted-foreground: oklch(0.5 0.02 264);
+
+  /* Magenta accent for highlights / links / badges */
+  --accent: oklch(0.65 0.22 350);
+  --accent-foreground: oklch(1 0 0);
+
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(1 0 0);
+  --success: oklch(0.65 0.15 145);
+  --success-foreground: oklch(1 0 0);
+  --warning: oklch(0.78 0.14 75);
+  --warning-foreground: oklch(0.205 0.04 264);
+  --info: oklch(0.65 0.13 230);
+  --info-foreground: oklch(1 0 0);
+  --neutral: oklch(0.5 0.02 264);
+  --neutral-foreground: oklch(1 0 0);
+
+  --border: oklch(0.92 0.01 247);
+  --input: oklch(0.92 0.01 247);
+  --ring: oklch(0.7 0.13 210);
+
+  --chart-1: oklch(0.7 0.13 210);
+  --chart-2: oklch(0.65 0.22 350);
+  --chart-3: oklch(0.65 0.15 145);
+  --chart-4: oklch(0.78 0.14 75);
+  --chart-5: oklch(0.6 0.22 27);
+
+  --sidebar: oklch(0.985 0.005 247);
+  --sidebar-foreground: oklch(0.205 0.04 264);
+  --sidebar-primary: oklch(0.7 0.13 210);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.965 0.01 247);
+  --sidebar-accent-foreground: oklch(0.205 0.04 264);
+  --sidebar-border: oklch(0.92 0.01 247);
+  --sidebar-ring: oklch(0.7 0.13 210);
+
+  --skeleton-base: oklch(0.95 0.01 247);
+  --skeleton-highlight: oklch(0.98 0.005 247);
+
+  --radius: 0.625rem;
+}
+.dark [data-theme-preset='agent-router'] {
+  --background: oklch(0.165 0.025 260);
+  --foreground: oklch(0.95 0.01 247);
+  --card: oklch(0.21 0.03 260);
+  --card-foreground: oklch(0.95 0.01 247);
+  --popover: oklch(0.23 0.03 260);
+  --popover-foreground: oklch(0.95 0.01 247);
+
+  /* Neon cyan primary — #00e5ff family (OKLCH hue ~195) */
+  --primary: oklch(0.82 0.16 200);
+  --primary-foreground: oklch(0.13 0.03 260);
+  --secondary: oklch(0.27 0.025 260);
+  --secondary-foreground: oklch(0.95 0.01 247);
+  --muted: oklch(0.27 0.025 260);
+  --muted-foreground: oklch(0.72 0.02 247);
+
+  /* Bright magenta accent */
+  --accent: oklch(0.7 0.28 350);
+  --accent-foreground: oklch(0.13 0.03 260);
+
+  --destructive: oklch(0.7 0.22 22);
+  --destructive-foreground: oklch(0.98 0.005 95);
+  --success: oklch(0.72 0.18 145);
+  --success-foreground: oklch(0.13 0.03 260);
+  --warning: oklch(0.82 0.16 75);
+  --warning-foreground: oklch(0.13 0.03 260);
+  --info: oklch(0.75 0.15 230);
+  --info-foreground: oklch(0.13 0.03 260);
+  --neutral: oklch(0.72 0.02 247);
+  --neutral-foreground: oklch(0.13 0.03 260);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(0.82 0.16 200);
+
+  --chart-1: oklch(0.82 0.16 200);
+  --chart-2: oklch(0.7 0.28 350);
+  --chart-3: oklch(0.72 0.18 145);
+  --chart-4: oklch(0.82 0.16 75);
+  --chart-5: oklch(0.7 0.22 22);
+
+  --sidebar: oklch(0.19 0.025 260);
+  --sidebar-foreground: oklch(0.95 0.01 247);
+  --sidebar-primary: oklch(0.82 0.16 200);
+  --sidebar-primary-foreground: oklch(0.13 0.03 260);
+  --sidebar-accent: oklch(0.27 0.025 260);
+  --sidebar-accent-foreground: oklch(0.95 0.01 247);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.82 0.16 200);
+
+  --skeleton-base: oklch(0.25 0.025 260);
+  --skeleton-highlight: oklch(0.32 0.025 260);
+}
+
 /* ── Simple Large-font ────────────────────────────────────────────────── */
 [data-theme-preset='simple-large'] {
   --background: oklch(0.99 0 0);
